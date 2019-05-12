@@ -16,7 +16,14 @@ int main()
 			scanf("%f",&Matrix[i][j]);
 		}
 	}
-	
+	system("cls");
+	printf("Original Matrix: \n");
+	for(i=0;i<N;i++){
+		for(j=0;j<N;j++){
+			printf("%0.3f ",Matrix[i][j]);
+		}
+		printf("\n");
+	}
 	for(i=0;i<N;i++){
 		for(j=0;j<N;j++){
 			
@@ -61,6 +68,7 @@ int main()
 			  }
 			  printf("\n");
 		 }
-		
+		printf("\n");
+	system("pause");	
 	return 0;
 }
