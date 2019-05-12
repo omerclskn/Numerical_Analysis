@@ -20,11 +20,14 @@ int main() {
 	float x1, x2, x3;
 	float dx1, dx2, dx3;
 	float x10=1, x20=1, x30=1;
+	int step=1;
+	
+	printf("Please be sure write the true define functions before the test\n\n");
 	
 	printf("Enter epsilon: ");
 	scanf("%f", &epsilon);
 	
-	printf("x1\tdx1\tx2\tdx2\tx3\tdx3\n",x1, dx1, x2, dx2, x3, dx3);
+	printf("\nStep\tx1\tdx1\tx2\tdx2\tx3\tdx3\n");
 	
 	do{
 
@@ -37,15 +40,16 @@ int main() {
 	dx3 = fabs(x30 - x3);
 	
 	
-	printf("%0.3f\t%0.3f\t%0.3f\t%0.3f\t%0.3f\t%0.3f\n", x1, dx1, x2, dx2, x3, dx3);
+	printf("%d\t%0.3f\t%0.3f\t%0.3f\t%0.3f\t%0.3f\t%0.3f\n", step, x1, dx1, x2, dx2, x3, dx3);
 	
 	x10 = x1; 
 	x20 = x2;
 	x30 = x3;
 
+	step++;
 	}while(dx1 > epsilon && dx2 > epsilon && dx3 > epsilon);
 	
-	printf("\nRoots: x1=%f x2=%f x3=%f\n",x1,x2,x3);
+	printf("\nx1 = %f\nx2 = %f\nx3 = %f\n\n",x1,x2,x3);
 	
 	system("pause");
 	return 0;
