@@ -26,7 +26,7 @@ int main() {
 	printf("Enter epsilon: ");
 	scanf("%f", &epsilon);
 	
-	printf("\nx1\tdx1\tx2\tdx2\tx3\tdx3\n",x1, dx1, x2, dx2, x3, dx3);
+	printf("\nx1\tdx1\tx2\tdx2\tx3\tdx3\n");
 	
 	do{
 
