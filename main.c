@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <math.h>
+
+// Write down the function here
+#define f(x) 1/(1+x*x)
+
+float FunctionResult(float equation[], int N, float x)
+{
+    int i;
+    float sum = 0.0, factor = 1;
+
+    for(i=0; i <= N; i++)
+    {
+        sum += equation[i] * factor;
+        factor *= x;
+    }
+    return sum;
+}
+
+int main() {
+	
+	float h, upper, lower, f0, sum=0, result=0;
+    int n, counter=0;
+	
+	printf("Please enter the equation above before testing\n\n");
+	
+	printf("Enter Lower Limit: ");
+	scanf("%f", &lower);
+	
+	printf("Enter Upper Limit: ");
+	scanf("%f", &upper);
+	
+	printf("Enter n number: ");
+	scanf("%d", &n);
+	
+	h = fabs(upper-lower)/n;
+	
+	printf("x\tf(x)\n");
+	do{
+		f0 = f(lower);
+		
+		if(counter == 0 || counter == n){
+		sum += f0;
+		}
+		else{
+			sum += 2*f0;
+		}
+		
+		printf("%0.3f\t%f\n",lower,f0);
+		lower += h;
+		counter++;
+		
+	}while(lower<=upper);
+	
+	printf("\nResult: %f\n", sum*(h/2) );
+	
+    system("pause");
+	return 0;
+}
