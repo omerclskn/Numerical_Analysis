@@ -15,7 +15,7 @@ float FunctionResult(float equation[], int N, float x)
 
 int main() {
 	float equation[50], x0, fx0, epsilon, x1, fx1, x2, fx2, control=0.0, minrange, maxrange;
-    int i, degree;
+    int i, degree, step=1;
 
     printf("Degree of Equation :");
     scanf("%d", &degree);
@@ -38,6 +38,8 @@ int main() {
 	x0 = minrange;
 	x1 = maxrange;
 	
+	printf("Step\tx0\tf(x0)\tx1\tf(x1)\tx2\tf(x2)\n");
+	
 	do{	
 	fx0 = FunctionResult(equation, degree, x0);
 	fx1 = FunctionResult(equation, degree, x1);
@@ -55,6 +57,8 @@ int main() {
 		x1 = x2;
 		fx1 = fx2;
 	}
+	printf("%d\t%0.3f\t%0.3f\t%0.3f\t%0.3f\t%0.3f\t%0.3f\n", step, x0, fx0, x1, fx1, x2, fx2);
+	step++;
 	}while(epsilon < control);
 
 	printf("Root: %f\n",x2);
