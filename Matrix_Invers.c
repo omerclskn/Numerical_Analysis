@@ -8,7 +8,7 @@ int main()
 	printf("Enter Matrix Size: ");
 	scanf("%d",&N);
 	
-	float Matrix[50][50];
+	float Matrix[N][N*2];
 	
 	for(i=0;i<N;i++){
 		for(j=0;j<N;j++){
