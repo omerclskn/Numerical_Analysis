@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 float FunctionResult(float equation[], int N, float x)
 {
@@ -16,7 +17,7 @@ float FunctionResult(float equation[], int N, float x)
 int main() {
 	
 	float equation[50], a, b, fa, fb, epsilon, c, fc;
-    int i, degree;
+    int i, degree, step=1, control=1;
 
     printf("Degree of Equation :");
     scanf("%d", &degree);
@@ -42,22 +43,32 @@ int main() {
 	
 	if(fa * fb > 0){
 			printf("Root not found.\n");
+			control = 0;
 	}
+	
 	else {
-		
+		printf("\nStep \t a \t f(a) \t b \t f(b) \t c \t f(c)\n");	
 	do{	
-    c = (a+b)/2;
-	fc = FunctionResult(equation, degree, c);
+		fa = FunctionResult(equation, degree, a);
+		fb = FunctionResult(equation, degree, b);
+		
+    	c = (a+b)/2;
+		fc = FunctionResult(equation, degree, c);
+		
 	if(fa*fc > 0){
 		a=c;
 	}
 	else{
 		b=c;
 	}
-	if(fc<0) fc *= -1;
-	}while(epsilon < fc);
+	printf("%d\t %0.3f\t %0.3f\t %0.3f\t %0.3f\t %0.3f\t %0.3f\t\n", step, a, fa, b, fb, c, fc);
+	step++;
+	}while(epsilon < fabs(fc));
 }
-	printf("Root: %f\n",c);
+	if(control  == 1){
+		printf("\nRoot: %f\n",c);	
+	}
+	
     system("pause");
 	return 0;
 }
