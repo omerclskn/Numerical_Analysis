@@ -18,7 +18,7 @@ int main()
 	}
 	
 	for(i=0;i<N;i++){
-		for(j=0;j<N*2;j++){
+		for(j=0;j<N;j++){
 			
 			if(i==j)
 			{
