@@ -46,10 +46,12 @@ int main()
     f1 = FunctionResult(equation, degree, x1);
 	printf("%d\t%f\t%f\t%f\t%f\n", step, x0, f0, x1, f1);
 	
-    if(f0 * f1 < 0)
-        dx /= 2.0;
-    else
-        x0 = x1;
+    if(f0 * f1 < 0){
+		dx /= 2.0;
+		}
+    else{
+		x0 = x1;
+		}
         step++;
     }
     printf("\nRoot: %f\n", x0);
