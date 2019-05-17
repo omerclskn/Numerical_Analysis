@@ -17,7 +17,7 @@ int main() {
 	
 	float fd, bd, cd, dx;
 	float equation[50], x0;
-   	 int i, degree;
+    int i, degree;
 
     printf("Degree of Equation :");
     scanf("%d", &degree);
@@ -42,6 +42,7 @@ int main() {
 	
 	// Central Derivation
 	cd = (FunctionResult(equation, degree, x0+dx) - FunctionResult(equation, degree, x0-dx))/(2*dx);
+	// or cd = (fd+bd)/2;
 	
 	printf("Backward \t Forward \t Central\n");
 	printf("%f\t%f\t%f\n", bd, fd, cd);
