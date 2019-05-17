@@ -3,7 +3,7 @@
 int main()
 {
 	int N,i,j,k;
-	float count;
+	float count,m=2.0;
 	
 	printf("Enter Matrix Size: ");
 	scanf("%d",&N);
