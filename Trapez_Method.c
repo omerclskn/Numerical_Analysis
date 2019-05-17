@@ -19,7 +19,7 @@ float FunctionResult(float equation[], int N, float x)
 
 int main() {
 	
-	float h, upper, lower, f0, sum=0, result=0;
+	float h, upper, lower, f0, sum=0;
     int n, counter=0;
 	
 	printf("Please be sure write the true define functions before the test\n\n");
