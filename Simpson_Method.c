@@ -22,7 +22,7 @@ int main() {
 	float h, upper, lower, f0, sum=0, result=0;
     int n, counter=0;
 	
-	printf("Please enter the equation above before testing\n\n");
+	printf("Please be sure write the true define functions before the test\n\n");
 	
 	printf("Enter Lower Limit: ");
 	scanf("%f", &lower);
@@ -35,7 +35,7 @@ int main() {
 	
 	h = fabs(upper-lower)/n;
 	
-	printf("x\tf(x)\n");
+	printf("\nx\tf(x)\n");
 	do{
 		f0 = f(lower);
 		
